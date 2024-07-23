@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 try:
-    from utils import RESULT
+    from SoftHebb.utils import RESULT
 except:
     from hebb.utils import RESULT
 import torch

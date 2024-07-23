@@ -3,15 +3,15 @@ from torch import Tensor
 import torch.nn as nn
 
 try:
-    from utils import RESULT
+    from SoftHebb.utils import RESULT
 except:
     from hebb.utils import RESULT
 
 import torch.nn.functional as F
 from typing import Callable, List, Optional
-from hebblinear import select_linear_layer
-from hebbconv import select_Conv2d_layer
-from activation import get_activation
+from SoftHebb.hebblinear import select_linear_layer
+from SoftHebb.hebbconv import select_Conv2d_layer
+from SoftHebb.activation import get_activation
 import os.path as op
 import einops
 

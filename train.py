@@ -1,7 +1,7 @@
-from utils import CustomStepLR, double_factorial
-from model import save_layers, HebbianOptimizer, AggregateOptim
-from engine import train_sup, train_unsup, evaluate_unsup, evaluate_sup
-from dataset import make_data_loaders
+from SoftHebb.utils import CustomStepLR, double_factorial
+from SoftHebb.model import save_layers, HebbianOptimizer, AggregateOptim
+from SoftHebb.engine import train_sup, train_unsup, evaluate_unsup, evaluate_sup
+from SoftHebb.dataset import make_data_loaders
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -258,7 +258,7 @@ def run_hybrid(
 
     print('\n', '********** Hybrid learning of blocks %s **********' % blocks)
 
-    train_loader, test_loader = make_data_loaders(dataset_config, batch_size, device)
+    train_loader,_, test_loader = make_data_loaders(dataset_config, batch_size, device)
 
     optimizer_sgd = optim.Adam(
         model.parameters(), lr=lr)  # , weight_decay=1e-4)

@@ -2,7 +2,7 @@ import copy
 import random
 
 try:
-    from utils import seed_init_fn, DATASET
+    from SoftHebb.utils import seed_init_fn, DATASET
 except:
     from hebb.utils import seed_init_fn, DATASET
 import numpy as np
@@ -282,28 +282,30 @@ def make_data_loaders(dataset_config, batch_size, device, dataset_path=DATASET):
 
     if val_indices is not None:
         val_sampler = SubsetRandomSampler(val_indices)
-        test_loader = torch.utils.data.DataLoader(dataset=origin_dataset,
-                                                  batch_size=batch_size,
-                                                  num_workers=dataset_config['num_workers'],
-                                                  sampler=val_sampler)
+        validation_loader = torch.utils.data.DataLoader(dataset=origin_dataset,
+                                                        batch_size=batch_size,
+                                                        num_workers=dataset_config['num_workers'],
+                                                        sampler=val_sampler)
     else:
-        test_loader = torch.utils.data.DataLoader(
-            dataset_class(
-                dataset_path,
-                split="val" if dataset_config['name'] in ['ImageNet', 'ImageNette',
-                                                          'ImageNetV2MatchedFrequency'] else "test",
-                train=False,
-                zca=dataset_config['zca_whitened'],
-                transform=test_transform,
-                device=device
-            ),
-            batch_size=batch_size if dataset_config['name'] in ['STL10', 'ImageNet', 'ImageNette',
-                                                                'ImageNetV2MatchedFrequency', 'ImageNetV2TopImages',
-                                                                'ImageNetV2Threshold07'] else 1000,
-            num_workers=dataset_config['num_workers'],
-            shuffle=dataset_config['shuffle'],
-        )
-    return train_loader, test_loader
+        validation_loader = None
+
+    test_loader = torch.utils.data.DataLoader(
+        dataset_class(
+            dataset_path,
+            split="val" if dataset_config['name'] in ['ImageNet', 'ImageNette',
+                                                      'ImageNetV2MatchedFrequency'] else "test",
+            train=False,
+            zca=dataset_config['zca_whitened'],
+            transform=test_transform,
+            device=device
+        ),
+        batch_size=batch_size if dataset_config['name'] in ['STL10', 'ImageNet', 'ImageNette',
+                                                            'ImageNetV2MatchedFrequency', 'ImageNetV2TopImages',
+                                                            'ImageNetV2Threshold07'] else 1000,
+        num_workers=dataset_config['num_workers'],
+        shuffle=dataset_config['shuffle'],
+    )
+    return train_loader, validation_loader, test_loader
 
 
 def whitening_zca(x: torch.Tensor, transpose=True, dataset: str = "CIFAR10"):
