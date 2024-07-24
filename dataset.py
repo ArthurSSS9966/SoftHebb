@@ -2,7 +2,7 @@ import copy
 import random
 
 try:
-    from SoftHebb.utils import seed_init_fn, DATASET
+    from utils import seed_init_fn, DATASET
 except:
     from hebb.utils import seed_init_fn, DATASET
 import numpy as np

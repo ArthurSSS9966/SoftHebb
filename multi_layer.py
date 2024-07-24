@@ -1,9 +1,9 @@
 import argparse
 
-from SoftHebb.utils import load_presets, get_device, load_config_dataset, seed_init_fn, str2bool
-from SoftHebb.model import load_layers
-from SoftHebb.train import run_sup, run_unsup, check_dimension, training_config, run_hybrid
-from SoftHebb.log import Log, save_logs
+from utils import load_presets, get_device, load_config_dataset, seed_init_fn, str2bool
+from model import load_layers
+from train import run_sup, run_unsup, check_dimension, training_config, run_hybrid
+from log import Log, save_logs
 import warnings
 
 warnings.filterwarnings("ignore")

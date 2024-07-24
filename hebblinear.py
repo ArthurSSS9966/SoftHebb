@@ -3,7 +3,7 @@ import torch.nn as nn
 from typing import Generator, Union
 
 try:
-    from SoftHebb.utils import init_weight, normalize, activation, unsup_lr_scheduler
+    from utils import init_weight, normalize, activation, unsup_lr_scheduler
 except:
     from hebb.utils import init_weight, normalize, activation, unsup_lr_scheduler
 import einops

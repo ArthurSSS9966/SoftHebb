@@ -2,10 +2,10 @@ import torch
 import torch.nn as nn
 
 try:
-    from SoftHebb.utils import RESULT, activation
+    from utils import RESULT, activation
 except:
     from hebb.utils import RESULT, activation
-from SoftHebb.layer import generate_block
+from layer import generate_block
 import os
 import os.path as op
 

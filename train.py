@@ -1,7 +1,7 @@
-from SoftHebb.utils import CustomStepLR, double_factorial
-from SoftHebb.model import save_layers, HebbianOptimizer, AggregateOptim
-from SoftHebb.engine import train_sup, train_unsup, evaluate_unsup, evaluate_sup
-from SoftHebb.dataset import make_data_loaders
+from utils import CustomStepLR, double_factorial
+from model import save_layers, HebbianOptimizer, AggregateOptim
+from engine import train_sup, train_unsup, evaluate_unsup, evaluate_sup
+from dataset import make_data_loaders
 import torch
 import torch.optim as optim
 import torch.nn as nn

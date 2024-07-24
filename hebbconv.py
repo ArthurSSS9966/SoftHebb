@@ -5,13 +5,13 @@ import torch.nn.functional as F
 from torch.nn.modules.utils import _pair
 
 try:
-    from SoftHebb.utils import init_weight, activation, unsup_lr_scheduler
+    from utils import init_weight, activation, unsup_lr_scheduler
 except:
     from hebb.utils import init_weight, activation, unsup_lr_scheduler
 import einops
 from tabulate import tabulate
 
-from SoftHebb.activation import Triangle
+from activation import Triangle
 
 
 class HebbHardConv2d(nn.Module):
