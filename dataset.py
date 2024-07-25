@@ -113,9 +113,13 @@ def select_dataset(dataset_config, device, dataset_path):
             device = 'cpu'
             transform = crop_flip(dataset_config['width'], dataset_config['height'])
             transform = AddGaussianNoise(std=dataset_config['noise_std'])
+
         else:
             dataset_train_class = FastMNIST
-            transform = None
+            transform = transforms.Compose([
+                transforms.ToTensor(),
+                transforms.Normalize((0.1307,), (0.3081,))
+            ])
 
     elif dataset_config['name'] == 'FashionMNIST':
         dataset_class = FastFashionMNIST
