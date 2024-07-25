@@ -37,7 +37,7 @@
     "2SoftHebbCnnCIFAR": {
       "b0": {
         "arch": "CNN",
-        "preset": "softkrotov-c96-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
+        "preset": "soft-c96-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
         "operation": "batchnorm2d",
         "num": 0,
         "batch_norm": false,
