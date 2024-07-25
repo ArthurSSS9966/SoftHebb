@@ -3,7 +3,7 @@
     "2SoftMlpMNIST": {
       "b0": {
         "arch": "MLP",
-        "preset": "soft-c2000-t12-lr0.045-r35-v1",
+        "preset": "soft-c100-t12-lr0.045-r35-v1",
         "operation": "flatten",
         "activation": "softmax_5",
         "num": 0,
@@ -37,7 +37,7 @@
     "2SoftHebbCnnCIFAR": {
       "b0": {
         "arch": "CNN",
-        "preset": "soft-c96-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
+        "preset": "soft-c100-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
         "operation": "batchnorm2d",
         "num": 0,
         "batch_norm": false,
