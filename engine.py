@@ -79,7 +79,6 @@ def train_sup_hebb(model, loader, device, measures=None, criterion=None):
     """
     Train only the hebbian blocks
     """
-    t = time.time()
     loss_acc = (not model.is_hebbian()) and (criterion is not None)
     with torch.no_grad():
         for inputs, target in loader:
