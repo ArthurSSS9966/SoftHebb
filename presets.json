@@ -37,7 +37,7 @@
     "2SoftHebbCnnMNIST": {
       "b0": {
         "arch": "CNN",
-        "preset": "soft-c100-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
+        "preset": "soft-c4-k5-p2-s1-d1-b0-t1-lr0.08-lp0.5-e0",
         "operation": "batchnorm2d",
         "num": 0,
         "batch_norm": false,
@@ -51,7 +51,7 @@
         "operation": "flatten",
         "num": 1,
         "att_dropout": null,
-        "dropout": 0.5
+        "dropout": 0
       }
     },
     "2SoftHebbCnnCIFAR": {
